@@ -1,20 +1,13 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[2]:
-
-
 import pandas as pd
 from os import listdir
 from os.path import join
 # from bmldev.loads import txts_to_pd
 from unicodedata import normalize
 import re
+from PyPDF2 import PdfFileReader, PdfFileMerger
 
 
 # # remover_acentos
-
-# In[3]:
 
 
 def remover_acentos(txt):
@@ -28,7 +21,6 @@ def remover_acentos(txt):
 
 # # buscar_bases
 
-# In[18]:
 
 
 def buscar_bases(path, nomes=None):
@@ -94,17 +86,23 @@ def buscar_bases(path, nomes=None):
                 yield caminho 
 
 
-# In[16]:
+# Merge pdf
 
+def merge_pdf(files_dir, nome_saida):
+    """Função para agrupar vários arquivos pdf em um só.
+    
+    Argumentos:
+    files_dir (STRING): Caminho do diretório que contém os arquivos em pdf.
+    nome_saida (STRING): Nome do arquivo de saída. Também poderá ser passado o caminho em que se deseja salvar.
+    """
+    
+    pdf_files = [f for f in listdir(files_dir) if f.endswith("pdf")]
+    merger = PdfFileMerger()
 
-# if (re.search('monofasico[s]?', 'monofasico', flags=re.IGNORECASE)):
-#     print('OK')
-# else:
-#     print('NO :(')
+    for filename in pdf_files:
+        merger.append(PdfFileReader(join(files_dir, filename), "rb"))
 
-
-# In[15]:
-
-
-# pf, pj, mono, glpca = buscar_bases('bases', nomes=['pf', 'pj', 'monofasico[s]?', 'glpca'])
-
+#     merger.write(os.path.join(files_dir, nome_saida))
+    merger.write(nome_saida)
+    
+    return None
