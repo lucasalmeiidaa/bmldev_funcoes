@@ -10,14 +10,16 @@ Atualmente, com as funções desenvolvidas, são utilizadas as seguintes bibliot
 * [OS](https://docs.python.org/3/library/os.html);
 * [unicodedata](https://docs.python.org/3/library/unicodedata.html);
 * [re](https://docs.python.org/3/library/re.html) 
+* [PyPDF2](https://pythonhosted.org/PyPDF2/)
 
 Para facilitar a instalação, caso você não possua Python instalado em seu computador, é recomendável que instale pelo
 [Anaconda](https://www.anaconda.com/), esta ferramenta já vem com a maioria das bibliotecas necessárias para Data Science.
 
 ## Fuções existentes:
 Atualmente, o repositório conta com duas funções, sendo elas:
-* remover_acentos;
-* buscas_bases
+* [remover_acentos](https://github.com/lucasalmeiidaa/bmldev_funcoes/blob/master/buscar_bases/funcoes.ipynb)
+* [buscas_bases](https://github.com/lucasalmeiidaa/bmldev_funcoes/blob/master/buscar_bases/funcoes.ipynb)
+* [merge_pdf](https://github.com/lucasalmeiidaa/bmldev_funcoes/blob/master/merge_pdf/pdf_merge.ipynb)
 
 ## Utilizando as funções
 Caso deseje, o usuário pode fazer o download do arquivo .py e utilizar em um projeto utilizando:
