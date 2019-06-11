@@ -105,6 +105,9 @@ venv.bak/
 
 #bases
 bases/
+*pdf
+merge_pdf/bases/
+merge_pdf/*pdf
 
 #bmldev
 bmldev
